@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Study Planner</title>
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--tx:#1d2433;--mu:#667085;--bd:#e3e6ee;--ac:#4f46e5;--ok:#16a34a;--fx:#eef0f6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10131c;--card:#1a1f2d;--tx:#e8ebf4;--mu:#98a2b8;--bd:#2a3144;--ac:#818cf8;--ok:#4ade80;--fx:#222839}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}
+.w{max-width:860px;margin:0 auto;padding:16px}
+h1{font-size:22px;margin:0}.top{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.nav{display:flex;gap:6px;align-items:center}
+button,select,input{font:inherit;color:var(--tx);background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:6px 10px}
+button{cursor:pointer}button.p{background:var(--ac);color:#fff;border-color:var(--ac)}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px 14px;margin:10px 0}
+.bar{height:10px;background:var(--fx);border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.mu{color:var(--mu);font-size:13px}
+.blk{border-left:4px solid var(--ac)}.blk.fx{border-left-color:var(--bd);background:var(--fx)}
+.hd{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-weight:600}
+.tag{background:var(--ac);color:#fff;border-radius:20px;padding:1px 10px;font-size:12px;font-weight:600}
+label.t{display:flex;gap:8px;align-items:flex-start;padding:4px 0;cursor:pointer}
+label.t input{margin-top:4px;width:17px;height:17px;flex:none}
+label.t.d span{text-decoration:line-through;color:var(--mu)}
+.row{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}.row input[type=text]{flex:1;min-width:150px}
+.wk{display:flex;gap:6px;align-items:flex-end;height:60px;margin-top:6px}
+.wk div{flex:1;text-align:center;font-size:11px;color:var(--mu)}.wk b{display:block;background:var(--ac);border-radius:4px 4px 0 0;min-height:2px}
+.x{border:0;background:none;color:var(--mu);padding:0 4px}
+details summary{cursor:pointer;font-weight:600}
+table{border-collapse:collapse;width:100%;font-size:13px}td,th{border:1px solid var(--bd);padding:4px 6px;text-align:left}
+.sc{overflow-x:auto}
+</style></head><body><div class="w">
+<div class="top"><div><h1>📚 Study Planner</h1><div class="mu" id="sub"></div></div>
+<div class="nav"><button id="pv">‹</button><input type="date" id="dt"><button id="nx">›</button><button id="td">Today</button></div></div>
+<div class="card"><div class="hd"><span id="pt">Progress</span><span id="pp"></span></div><div class="bar"><i id="pb"></i></div>
+<div class="wk" id="wk"></div><div class="mu" id="stk"></div></div>
+<div id="list"></div>
+<div class="card"><div class="hd">➕ Add today’s question / task</div>
+<div class="row"><select id="xs"></select><input type="text" id="xt" placeholder="e.g. Reverse a linked list, Q on joins…"><button class="p" id="xa">Add</button></div></div>
+<div class="card"><div class="hd">💾 Save permanently</div>
+<div class="mu" id="bm">Saved on this device. Sign in to claude.ai to also sync to your account, or download a backup file.</div>
+<div class="row"><button id="ex">⬇ Download backup</button><button id="im">⬆ Restore backup</button><input type="file" id="fi" accept=".json" hidden></div></div>
+<div class="card"><details><summary>Weekly subject rotation</summary><div class="sc"><table id="rot"></table></div>
+<div class="mu" style="margin-top:6px">Start date (topic roadmap begins here): <input type="date" id="st"></div></details></div>
+</div>
+<script>
+const S={dsa:['DSA','Arrays & strings|Hashing|Two pointers & sliding window|Linked lists|Stack & queue|Recursion & backtracking|Trees & BST|Heaps|Graphs BFS/DFS|Dynamic programming|Greedy|Binary search',4],
+c:['C','Syntax & data types|Operators & control flow|Functions & recursion|Arrays & strings|Pointers|Structures & unions|Dynamic memory|File handling',3],
+cpp:['C++','OOP: classes & objects|Constructors & destructors|Inheritance & polymorphism|Operator overloading|Templates|STL vectors/maps/sets|STL algorithms|Smart pointers & RAII',3],
+java:['Java','Basics & OOP|Collections framework|Exceptions|Strings & generics|Multithreading|Streams & lambdas|JDBC|File I/O',3],
+py:['Python','Syntax & data types|Functions & lambdas|OOP|Comprehensions & generators|File handling|Modules & venv|Decorators|Error handling',3],
+np:['NumPy','Arrays & dtypes|Indexing & slicing|Broadcasting|Math & aggregation|Reshaping & stacking|Linear algebra|Random module',3],
+pd:['Pandas','Series & DataFrame|Selecting loc/iloc|Cleaning missing data|GroupBy & agg|Merge & join|Time series|Visualization|EDA mini project',3],
+ml:['AI/ML','Math: linear algebra & stats|Linear regression|Logistic regression|Decision trees & forests|SVM & KNN|Clustering|Neural networks|Model evaluation|Deep learning (CNN)|Mini project',3],
+r:['R','Basics & vectors|Data frames|dplyr|ggplot2|Stats functions|Linear models',3],
+sql:['MySQL','DDL & DML|SELECT, WHERE, ORDER|Joins|GROUP BY & HAVING|Subqueries|Indexes|Views & procedures|Normalization & ER|Transactions',3],
+react:['ReactJS','JSX & components|Props & state|useEffect|Events & forms|Lists & keys|Routing|Context API|Fetch API & small app',2],
+ue:['Unreal Engine','Editor & project setup|Actors & components|Blueprints basics|Materials|Level design & lighting|Input & character movement|Collision & triggers|UI (UMG)|C++ in Unreal|Mini game',2]};
+const PLAN=[['react','java','dsa','ue'],['dsa','cpp','py','ue'],['java','ml','dsa','sql'],['c','pd','dsa','react'],['sql','ml','java','ue'],['dsa','r','cpp','react'],['np','ml','dsa','ue']];
+// index by getDay(): 0 Sun
+const DAYN=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const PLANMAP=[PLAN[0],PLAN[1],PLAN[2],PLAN[3],PLAN[4],PLAN[5],PLAN[6]];
+const ROW=[['06:00','06:30','🌅 Wake up, fresh up, light exercise'],['06:30','07:30','S0'],['07:30','08:00','🍳 Breakfast & get ready'],
+['08:00','12:30','🏫 College (note doubts to revisit at home)'],['12:30','13:00','🚌 Travel home'],['13:00','14:00','🍛 Lunch & rest'],
+['14:00','16:00','S1'],['16:00','16:30','☕ Break / snacks'],['16:30','18:30','S2'],['18:30','19:30','🚶 Walk / exercise / free time'],
+['19:30','20:30','🍽 Dinner & family'],['20:30','22:00','S3'],['22:00','22:30','📝 Daily review: log questions solved, plan tomorrow'],['22:30','23:00','😴 Wind down, sleep by 11']];
+const LS='studyplanner.v1';let st;
+try{st=JSON.parse(localStorage.getItem(LS))}catch(e){}
+const iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const parse=s=>{const[a,b,c]=s.split('-').map(Number);return new Date(a,b-1,c)};
+if(!st||!st.done)st={start:iso(new Date()),done:{},extra:{}};
+let cur=iso(new Date());
+let cloud=null,tm=null;
+const save=()=>{st.ts=Date.now();try{localStorage.setItem(LS,JSON.stringify(st))}catch(e){}
+if(cloud){clearTimeout(tm);tm=setTimeout(()=>{cloud.set({json:JSON.stringify(st)}).then(()=>msg('☁️ Saved to your account')).catch(()=>msg('Cloud save failed (still saved on this device)'))},800)}};
+function msg(t){const m=document.getElementById('bm');if(m)m.textContent=t}
+const $=i=>document.getElementById(i);
+function topic(key,date){const arr=S[key][1].split('|');let n=0;const s=parse(st.start),e=parse(date);
+for(let d=new Date(s);d<e;d.setDate(d.getDate()+1)){if(PLANMAP[d.getDay()].includes(key))n+=PLANMAP[d.getDay()].filter(k=>k==key).length}
+return arr[n%arr.length]+(n>=arr.length?' (revision round '+(Math.floor(n/arr.length)+1)+')':'')}
+function tasksFor(date){const d=parse(date).getDay(),out=[];
+ROW.forEach((r,i)=>{if(r[2][0]=='S'){const k=PLANMAP[d][+r[2][1]],t=topic(k,date),q=S[k][2];
+out.push({time:r[0]+' – '+r[1],tag:S[k][0],study:1,items:[
+['b'+i+'a','📖 Theory: '+t],['b'+i+'b','💻 Practice: solve '+q+' questions on “'+t+'”'],['b'+i+'c','🗒 Write short notes + 1 doubt/interview question']]})}
+else out.push({time:r[0]+' – '+r[1],title:r[2],items:[['b'+i,r[2]]],fx:1})});return out}
+function pct(date){const T=tasksFor(date),dn=st.done[date]||{};let a=0,b=0;
+T.forEach(x=>x.items.forEach(i=>{b++;if(dn[i[0]])a++}));(st.extra[date]||[]).forEach(e=>{b++;if(e.d)a++});return b?Math.round(a/b*100):0}
+function render(){$('dt').value=cur;$('st').value=st.start;const dd=parse(cur),dn=st.done[cur]||(st.done[cur]={});
+$('sub').textContent=dd.toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'long'})+' · '+(PLANMAP[dd.getDay()].map(k=>S[k][0]).join(' → '));
+const L=$('list');L.innerHTML='';
+tasksFor(cur).forEach(b=>{const c=document.createElement('div');c.className='card blk'+(b.fx?' fx':'');
+c.innerHTML='<div class="hd"><span>'+b.time+'</span>'+(b.tag?'<span class="tag">'+b.tag+'</span>':'')+'</div>';
+b.items.forEach(i=>{const l=document.createElement('label');l.className='t'+(dn[i[0]]?' d':'');
+l.innerHTML='<input type="checkbox"'+(dn[i[0]]?' checked':'')+'><span></span>';l.lastChild.textContent=i[1];
+l.firstChild.onchange=e=>{dn[i[0]]=e.target.checked;save();render()};c.appendChild(l)});L.appendChild(c)});
+const ex=st.extra[cur]||[];if(ex.length){const c=document.createElement('div');c.className='card';c.innerHTML='<div class="hd">⭐ My questions & extra tasks</div>';
+ex.forEach((e,idx)=>{const l=document.createElement('label');l.className='t'+(e.d?' d':'');
+l.innerHTML='<input type="checkbox"'+(e.d?' checked':'')+'><span></span><button class="x" title="Delete">✕</button>';
+l.children[1].textContent='['+e.s+'] '+e.t;l.children[1].style.flex=1;
+l.firstChild.onchange=ev=>{e.d=ev.target.checked;save();render()};
+l.lastChild.onclick=ev=>{ev.preventDefault();ex.splice(idx,1);save();render()};c.appendChild(l)});L.appendChild(c)}
+const p=pct(cur);$('pb').style.width=p+'%';$('pp').textContent=p+'%';$('pt').textContent=cur==iso(new Date())?'Today’s progress':'Progress for this day';
+const wk=$('wk');wk.innerHTML='';let streak=0;
+for(let i=6;i>=0;i--){const d=new Date(dd);d.setDate(d.getDate()-i);const v=pct(iso(d));
+wk.innerHTML+='<div><b style="height:'+Math.max(2,v*0.4)+'px"></b>'+DAYN[d.getDay()]+'<br>'+v+'%</div>'}
+for(let i=0;i<365;i++){const d=new Date();d.setDate(d.getDate()-i);if(pct(iso(d))>=60)streak++;else if(i>0)break;else continue}
+$('stk').textContent='🔥 Streak (days with ≥60% done): '+streak;
+const t=$('rot');t.innerHTML='<tr><th>Day</th><th>6:30 AM</th><th>2 PM</th><th>4:30 PM</th><th>8:30 PM</th></tr>'+
+[1,2,3,4,5,6,0].map(d=>'<tr><td>'+DAYN[d]+'</td>'+PLANMAP[d].map(k=>'<td>'+S[k][0]+'</td>').join('')+'</tr>').join('')}
+$('xs').innerHTML=Object.keys(S).map(k=>'<option>'+S[k][0]+'</option>').join('')+'<option>Other</option>';
+$('xa').onclick=()=>{const v=$('xt').value.trim();if(!v)return;(st.extra[cur]=st.extra[cur]||[]).push({s:$('xs').value,t:v,d:false});$('xt').value='';save();render()};
+$('xt').onkeydown=e=>{if(e.key=='Enter')$('xa').click()};
+const go=n=>{const d=parse(cur);d.setDate(d.getDate()+n);cur=iso(d);render()};
+$('pv').onclick=()=>go(-1);$('nx').onclick=()=>go(1);$('td').onclick=()=>{cur=iso(new Date());render()};
+$('dt').onchange=e=>{if(e.target.value){cur=e.target.value;render()}};
+$('st').onchange=e=>{if(e.target.value){st.start=e.target.value;save();render()}};
+render();
+$('ex').onclick=async()=>{try{const d=await claude.use('downloads');if(!d)throw 0;await d.save({filename:'study-planner-backup-'+iso(new Date())+'.json',data:JSON.stringify(st,null,1)})}catch(e){msg('Download not available here')}};
+$('im').onclick=()=>$('fi').click();
+$('fi').onchange=async e=>{try{const o=JSON.parse(await e.target.files[0].text());if(!o.done)throw 0;st=o;save();render();msg('✅ Backup restored')}catch(x){msg('That file is not a valid backup')}};
+(async()=>{try{const u=await claude.use('user'),db=await claude.use('db');if(!u||!db)return;const id=await u.id();if(!id)return;
+const ref=db.doc('data/users/'+id+'/planner'),s=await ref.get();
+if(s.exists){const c=JSON.parse(s.data().json);if(c&&c.done&&(c.ts||0)>=(st.ts||0)){st=c;try{localStorage.setItem(LS,JSON.stringify(st))}catch(e){}render()}}
+cloud=ref;msg('☁️ Synced with your account');if(!s.exists)save()}catch(e){}})();
+</script></body></html>
