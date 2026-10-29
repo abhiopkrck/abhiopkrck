@@ -1,109 +1,180 @@
-<!-- Profile README for abhiopkrck -->
+<!-- Profile README for abhiopkrck | neon glass-inspired GitHub profile -->
 
 <div align="center">
 
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,50:312E81,100:2563EB&height=200&section=header&text=Abhishek%20Boyane&fontSize=48&fontColor=FFFFFF&fontAlignY=38&desc=Developer%20%E2%80%A2%20Game%20Maker%20%E2%80%A2%20Lifelong%20Learner&descAlignY=60&descSize=16" alt="Abhishek Boyane profile banner" />
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=240&color=0:050816,28:111827,58:312e81,82:0e7490,100:050816&text=ABHISHEK%20BOYANE&fontSize=48&fontColor=E0F2FE&fontAlignY=38&desc=BUILD%20%E2%80%A2%20AUTOMATE%20%E2%80%A2%20INVENT&descSize=17&descAlignY=60&animation=fadeIn" alt="Abhishek Boyane — Build, Automate, Invent" />
 
-  <a href="https://github.com/abhiopkrck">
-    <img src="https://komarev.com/ghpvc/?username=abhiopkrck&style=for-the-badge&color=2563EB&label=PROFILE+VIEWS" alt="Profile views" />
-  </a>
-  <a href="https://github.com/abhiopkrck?tab=followers">
-    <img src="https://img.shields.io/github/followers/abhiopkrck?style=for-the-badge&logo=github&label=Followers&color=7C3AED" alt="GitHub followers" />
-  </a>
+<a href="https://github.com/abhiopkrck"><img src="https://komarev.com/ghpvc/?username=abhiopkrck&style=for-the-badge&color=0891b2&label=PROFILE+VIEWS" alt="Profile views" /></a>
+<a href="https://github.com/abhiopkrck?tab=followers"><img src="https://img.shields.io/github/followers/abhiopkrck?style=for-the-badge&logo=github&label=FOLLOWERS&color=6366f1" alt="GitHub followers" /></a>
+<a href="https://github.com/abhiopkrck?tab=repositories"><img src="https://img.shields.io/badge/OPEN_SOURCE-EXPLORER-0f766e?style=for-the-badge&logo=github&logoColor=white" alt="Open source explorer" /></a>
+
+<br/>
+
+### ✦ Developer · Game Maker · Automation Builder · Lifelong Learner
+
+*Turning curious ideas into useful software — one experiment at a time.*
 
 </div>
 
-## 💫 About Me
+---
 
-Hey there! I'm **Abhishek Boyane**, a third-year **B.Tech Computer Science Engineering** student who enjoys learning by building.
+## ◈ 01 / THE PERSON BEHIND THE CODE
 
-I'm curious about how technology works and how ideas can become useful products. My interests span **software development, AI, automation, game development, entrepreneurship, leadership, and business**. I like exploring different fields, connecting ideas, and developing the practical skills needed to turn concepts into working applications.
+Hey! I'm **Abhishek Boyane**, a third-year **B.Tech Computer Science Engineering** student. I love understanding how things work, experimenting with technology, and building projects that turn ideas into something real.
 
-I have built projects such as a **Netflix Clone, Employee Management System, Car Dealer Shop, Diary Management System, Pocket Notes, and an AI Image Generation app**. These projects have helped me practise application development, problem-solving, and working with different technologies.
+My interests live at the intersection of **software engineering, AI-powered tools, automation, game development, and invention**. I'm focused on becoming the kind of developer who can take a concept from a blank page to a working product.
 
-### 🎯 What I'm working toward
+<table>
+<tr>
+<td width="50%" valign="top">
 
-- 🛠️ Becoming a stronger developer who can design, build, and maintain complete applications.
-- 🤖 Exploring AI-powered tools and practical automation.
-- 🎮 Learning game development and experimenting with interactive experiences.
-- 📚 Improving my programming, software architecture, and problem-solving skills.
-- 💡 Turning ideas into useful projects and learning through hands-on experimentation.
+### 🧭 CURRENT MISSION
 
-> **My mindset:** Keep learning, keep building, and make ideas useful.
+- Build complete, useful applications
+- Make repetitive workflows smarter with automation
+- Explore AI as a practical tool, not just a buzzword
+- Learn game development and interactive worlds
+- Strengthen programming fundamentals and system design
 
-## 🌐 Connect with Me
+</td>
+<td width="50%" valign="top">
 
-<div align="left">
-  <a href="https://instagram.com/abhishekboyane3"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" /></a>
-  <a href="https://linkedin.com/in/abhishek-boyane-826911321"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-  <a href="https://youtube.com/@BROABHITM"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube" /></a>
-  <a href="mailto:abhishekboyaneco23859@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
-</div>
+### ⚡ MY BUILD PHILOSOPHY
 
-## 💻 Tech Stack
+> **Think boldly. Build small. Test honestly. Improve relentlessly.**
 
-### Languages
-<p>
-  <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C" />
-  <img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=222222" alt="JavaScript" />
-  <img src="https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white" alt="R" />
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
-</p>
+I learn best by experimenting, breaking things, fixing them, and shipping the next version. Every project is a chance to turn curiosity into skill.
 
-### Frameworks & Platforms
-<p>
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
-  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
-  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=222222" alt="Firebase" />
-  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=222222" alt="Supabase" />
-  <img src="https://img.shields.io/badge/Unreal%20Engine-0E1128?style=for-the-badge&logo=unrealengine&logoColor=white" alt="Unreal Engine" />
-</p>
+</td>
+</tr>
+</table>
 
-### Databases, Data & Tools
-<p>
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
-  <img src="https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite" />
-  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy" />
-  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas" />
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
-  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-</p>
-
-## 🚀 Selected Projects
-
-| Project | What it is |
-| --- | --- |
-| **Netflix Clone** | A streaming-service-inspired interface project. |
-| **Employee Management System** | An application for organising employee information and workflows. |
-| **Car Dealer Shop** | A car dealership website/application concept. |
-| **Diary Management System** | A digital diary for organising personal notes. |
-| **Pocket Notes** | A lightweight notes application. |
-| **AI Image Generation** | An application exploring AI-powered image creation. |
-
-*Explore my repositories for source code, implementation details, and more experiments.*
+## ◈ 02 / CONNECT WITH ME
 
 <div align="center">
-  <a href="https://github.com/abhiopkrck?tab=repositories">
-    <img src="https://img.shields.io/badge/Explore%20My%20Repositories-181717?style=for-the-badge&logo=github&logoColor=white" alt="Explore my repositories" />
-  </a>
+
+<a href="https://instagram.com/abhishekboyane3"><img src="https://img.shields.io/badge/Instagram-0B1020?style=for-the-badge&logo=instagram&logoColor=E879F9" alt="Instagram" /></a>
+<a href="https://linkedin.com/in/abhishek-boyane-826911321"><img src="https://img.shields.io/badge/LinkedIn-0B1020?style=for-the-badge&logo=linkedin&logoColor=38BDF8" alt="LinkedIn" /></a>
+<a href="https://youtube.com/@BROABHITM"><img src="https://img.shields.io/badge/YouTube-0B1020?style=for-the-badge&logo=youtube&logoColor=FB7185" alt="YouTube" /></a>
+<a href="mailto:abhishekboyaneco23859@gmail.com"><img src="https://img.shields.io/badge/Email-0B1020?style=for-the-badge&logo=gmail&logoColor=FCA5A5" alt="Email" /></a>
+
 </div>
 
-## 📊 GitHub Stats
+## ◈ 03 / TECH STACK
 
 <div align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=abhiopkrck&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github" alt="Abhishek's GitHub statistics" />
-  <img height="165" src="https://streak-stats.demolab.com?user=abhiopkrck&theme=tokyonight&hide_border=true" alt="Abhishek's GitHub streak" />
-  <br/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=abhiopkrck&layout=compact&theme=tokyonight&hide_border=true" alt="Most-used languages on GitHub" />
+
+### LANGUAGES
+<img src="https://skillicons.dev/icons?i=python,cpp,c,java,js,html&theme=dark" alt="Python, C++, C, Java, JavaScript and HTML" />
+
+### FRAMEWORKS · BACKENDS · PLATFORMS
+<img src="https://skillicons.dev/icons?i=react,fastapi,firebase,supabase,unreal&theme=dark" alt="React, FastAPI, Firebase, Supabase and Unreal Engine" />
+
+### DATA · DATABASES · DEVELOPER TOOLS
+<img src="https://skillicons.dev/icons?i=mysql,sqlite,numpy,pandas,git,github,linux,vscode&theme=dark" alt="MySQL, SQLite, NumPy, Pandas, Git, GitHub, Linux and VS Code" />
+
+</div>
+
+## ◈ 04 / SELECTED BUILDS
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 🎬 Netflix Clone
+A streaming-inspired interface project focused on UI layout and frontend practice.
+
+<a href="https://github.com/abhiopkrck?tab=repositories"><img src="https://img.shields.io/badge/VIEW_REPOSITORIES-6366F1?style=flat-square&logo=github&logoColor=white" alt="View repositories" /></a>
+
+</td>
+<td width="50%" valign="top">
+
+### 🧑‍💼 Employee Management System
+An application concept for organising employee information and management workflows.
+
+<a href="https://github.com/abhiopkrck?tab=repositories"><img src="https://img.shields.io/badge/VIEW_REPOSITORIES-0891B2?style=flat-square&logo=github&logoColor=white" alt="View repositories" /></a>
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🚘 Car Dealer Shop
+A dealership website/application concept exploring product presentation and browsing flows.
+
+<a href="https://github.com/abhiopkrck?tab=repositories"><img src="https://img.shields.io/badge/VIEW_REPOSITORIES-0D9488?style=flat-square&logo=github&logoColor=white" alt="View repositories" /></a>
+
+</td>
+<td width="50%" valign="top">
+
+### 📓 Diary Management System
+A digital diary concept for keeping personal notes organised.
+
+<a href="https://github.com/abhiopkrck?tab=repositories"><img src="https://img.shields.io/badge/VIEW_REPOSITORIES-8B5CF6?style=flat-square&logo=github&logoColor=white" alt="View repositories" /></a>
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+### 🗒️ Pocket Notes
+A lightweight notes app idea centred on quick capture and organisation.
+
+<a href="https://github.com/abhiopkrck?tab=repositories"><img src="https://img.shields.io/badge/VIEW_REPOSITORIES-EC4899?style=flat-square&logo=github&logoColor=white" alt="View repositories" /></a>
+
+</td>
+<td width="50%" valign="top">
+
+### ✨ AI Image Generation
+An application exploring AI-powered image creation and generative workflows.
+
+<a href="https://github.com/abhiopkrck?tab=repositories"><img src="https://img.shields.io/badge/VIEW_REPOSITORIES-38BDF8?style=flat-square&logo=github&logoColor=white" alt="View repositories" /></a>
+
+</td>
+</tr>
+</table>
+
+<div align="center">
+
+<a href="https://github.com/abhiopkrck?tab=repositories"><img src="https://img.shields.io/badge/EXPLORE_ALL_PROJECTS-OPEN_GITHUB-111827?style=for-the-badge&logo=github&logoColor=E0F2FE" alt="Explore all projects" /></a>
+
+</div>
+
+## ◈ 05 / GITHUB ANALYTICS
+
+<div align="center">
+
+<a href="https://github.com/abhiopkrck">
+<img height="175" src="https://github-readme-stats.vercel.app/api?username=abhiopkrck&show_icons=true&hide_border=true&bg_color=0B1020&title_color=67E8F9&text_color=C7D2FE&icon_color=A78BFA&rank_icon=github&include_all_commits=true" alt="GitHub statistics" />
+</a>
+<a href="https://github.com/abhiopkrck">
+<img height="175" src="https://streak-stats.demolab.com?user=abhiopkrck&hide_border=true&background=0B1020&ring=67E8F9&fire=F472B6&currStreakLabel=C7D2FE&sideLabels=C7D2FE&currStreakNum=FFFFFF&sideNums=FFFFFF&dates=94A3B8" alt="GitHub contribution streak" />
+</a>
+
+<br/>
+
+<a href="https://github.com/abhiopkrck">
+<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=abhiopkrck&layout=compact&hide_border=true&bg_color=0B1020&title_color=67E8F9&text_color=C7D2FE&langs_count=8" alt="Most-used programming languages" />
+</a>
+
+<br/>
+
+<a href="https://github.com/abhiopkrck">
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=abhiopkrck&bg_color=0B1020&color=C7D2FE&line=22D3EE&point=A78BFA&area=true&area_color=312E81&hide_border=true" width="98%" alt="GitHub contribution activity graph" />
+</a>
+
 </div>
 
 ---
 
 <div align="center">
-  <i>Thanks for stopping by! Let's learn, build, and make something useful. ✨</i>
-  <br/><br/>
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2563EB,50:312E81,100:0F172A&height=100&section=footer" alt="" />
+
+### ✦ BUILD SOMETHING THAT MATTERS ✦
+
+*Curiosity is the spark. Consistency is the engine. Building is the proof.*
+
+<a href="https://github.com/abhiopkrck?tab=repositories"><img src="https://img.shields.io/badge/LET'S_BUILD-TOGETHER-0891B2?style=for-the-badge&logo=github&logoColor=white" alt="Let's build together" /></a>
+
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&height=120&color=0:050816,50:312E81,100:0E7490&section=footer" alt="" />
+
 </div>
