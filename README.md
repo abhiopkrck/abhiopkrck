@@ -157,13 +157,9 @@ An application exploring AI-powered image creation and generative workflows.
 <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=abhiopkrck&layout=compact&hide_border=true&bg_color=0B1020&title_color=67E8F9&text_color=C7D2FE&langs_count=8" alt="Most-used programming languages" />
 </a>
 
-<br/>
-
-<a href="https://github.com/abhiopkrck">
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=abhiopkrck&bg_color=0B1020&color=C7D2FE&line=22D3EE&point=A78BFA&area=true&area_color=312E81&hide_border=true" width="98%" alt="GitHub contribution activity graph" />
-</a>
-
 </div>
+
+> **Contribution activity:** View the native GitHub contribution calendar directly on [my profile](https://github.com/abhiopkrck).
 
 ---
 
