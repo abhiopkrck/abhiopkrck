@@ -12,15 +12,39 @@ export default function Contact() {
   function update(event){setForm(current=>({...current,[event.target.name]:event.target.value}))}
   async function submit(event) {
     event.preventDefault()
-    setSending(true); setStatus({type:'',text:''})
+    if (sending) return
+    setSending(true)
+    setStatus({type:'',text:''})
     try {
-      const response = await fetch('/api/contact', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(form) })
-      const result = await response.json()
-      if (!response.ok) throw new Error(result.error || 'Message could not be sent.')
+      const response = await fetch('/api/contact', {
+        method:'POST',
+        headers:{'Content-Type':'application/json', 'Accept':'application/json'},
+        body:JSON.stringify(form)
+      })
+      const raw = await response.text()
+      let result = {}
+      if (raw.trim()) {
+        try {
+          result = JSON.parse(raw)
+        } catch {
+          throw new Error(response.ok
+            ? 'The contact service returned an invalid response. Please try again later.'
+            : `The contact service failed (HTTP ${response.status}). Please try again later.`)
+        }
+      }
+      if (!response.ok) {
+        throw new Error(result.error || `Message could not be sent (HTTP ${response.status}).`)
+      }
+      if (result.ok !== true) {
+        throw new Error(result.error || 'The contact service did not confirm delivery. Please try again.')
+      }
       setStatus({type:'success',text:'Message sent! I’ll get back to you soon.'})
       setForm({name:'',email:'',subject:'',message:'',website:''})
-    } catch(error) { setStatus({type:'error',text:error.message || 'Could not send your message. Please try again.'}) }
-    finally { setSending(false) }
+    } catch(error) {
+      setStatus({type:'error',text:error.message || 'Could not send your message. Please try again.'})
+    } finally {
+      setSending(false)
+    }
   }
   const socials=[['GitHub',profile.github,Github],['LinkedIn',profile.linkedin,Linkedin],['Instagram',profile.instagram,Instagram],['YouTube',profile.youtube,Youtube]]
   return <div className="page-content section-pad contact-page"><SectionHeading eyebrow="GET IN TOUCH / 01" title="Have something in mind?" description="Send a message directly from this page. Your message is delivered to my inbox by email."/><div className="contact-layout"><div className="glass contact-card"><span className="contact-icon"><Mail/></span><span className="eyebrow">SEND A MESSAGE</span><h2>Let's start<br/><span>a conversation.</span></h2><p>Fill in the form and I’ll receive your message by email.</p>
