@@ -7,6 +7,7 @@ import About from './pages/About.jsx'
 import Projects from './pages/Projects.jsx'
 import Journey from './pages/Journey.jsx'
 import Contact from './pages/Contact.jsx'
+import MilestonePage from './pages/MilestonePage.jsx'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -21,6 +22,10 @@ export default function App() {
       <Route path="/about" element={<About />} />
       <Route path="/projects" element={<Projects />} />
       <Route path="/journey" element={<Journey />} />
+      <Route path="/experience" element={<MilestonePage type="internships" />} />
+      <Route path="/hackathons" element={<MilestonePage type="hackathons" />} />
+      <Route path="/certifications" element={<MilestonePage type="certifications" />} />
+      <Route path="/courses" element={<MilestonePage type="courses" />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="*" element={<Home />} />
     </Routes></main><Footer /></>

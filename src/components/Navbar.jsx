@@ -1,13 +1,17 @@
 import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
-import { Home, UserRound, FolderKanban, GraduationCap, Mail, Github, PanelLeftClose, PanelLeftOpen, ArrowUpRight } from 'lucide-react'
+import { Home, UserRound, FolderKanban, GraduationCap, BriefcaseBusiness, Trophy, Award, BookOpen, Mail, Github, PanelLeftClose, PanelLeftOpen, ArrowUpRight } from 'lucide-react'
 import { profile } from '../data/portfolio'
 
 const links = [
   { label: 'Home', path: '/', icon: Home },
   { label: 'About', path: '/about', icon: UserRound },
   { label: 'Projects', path: '/projects', icon: FolderKanban },
-  { label: 'Journey', path: '/journey', icon: GraduationCap },
+  { label: 'Education', path: '/journey', icon: GraduationCap },
+  { label: 'Internship', path: '/experience', icon: BriefcaseBusiness },
+  { label: 'Hackathons', path: '/hackathons', icon: Trophy },
+  { label: 'Certifications', path: '/certifications', icon: Award },
+  { label: 'Courses', path: '/courses', icon: BookOpen },
   { label: 'Contact', path: '/contact', icon: Mail }
 ]
 

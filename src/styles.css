@@ -55,3 +55,27 @@ body:has(.sidebar-collapsed) .footer.container{width:min(1200px,calc(100% - 145p
  .sidebar-toggle{height:42px}
 }
 @media(prefers-reduced-motion:reduce){.nav-wrap,.sidebar,.sidebar-link,.sidebar-github,.sidebar-toggle{transition:none}}
+
+/* Sidebar positioning correction: the rendered component uses .sidebar-wrap. */
+.sidebar-wrap{position:fixed;inset:18px auto 18px 18px;z-index:100;width:244px;padding:0;transition:width .28s ease}
+.sidebar-links{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding-right:2px;scrollbar-width:thin;scrollbar-color:rgba(120,231,244,.25) transparent}
+.sidebar-links::-webkit-scrollbar{width:4px}
+.sidebar-links::-webkit-scrollbar-thumb{background:rgba(120,231,244,.25);border-radius:8px}
+.sidebar-wrap.sidebar-collapsed{width:78px}
+.site-shell{width:min(1120px,calc(100% - 310px));margin-left:calc(244px + max(28px, (100vw - 244px - 1120px)/2));margin-right:28px}
+.footer.container{width:min(1120px,calc(100% - 310px));margin-left:calc(244px + max(28px, (100vw - 244px - 1120px)/2));margin-right:28px}
+@media(max-width:760px){
+ .sidebar-wrap{inset:10px auto 10px 10px;width:66px}
+ .sidebar{padding:13px 7px 10px;border-radius:18px}
+ .sidebar-brand{justify-content:center;padding-inline:0}
+ .sidebar-brand-copy,.sidebar-caption,.sidebar-link-label,.sidebar-profile-copy,.sidebar-external{display:none}
+ .sidebar-divider{margin-bottom:16px}
+ .sidebar-links{overflow-y:auto}
+ .sidebar-link,.sidebar-github,.sidebar-toggle{justify-content:center;padding-inline:0;gap:0;height:45px}
+ .sidebar-active-dot{display:none}
+ .sidebar-profile{justify-content:center;padding-top:13px}
+ .site-shell,body:has(.sidebar-collapsed) .site-shell{width:calc(100% - 96px);margin-left:86px;margin-right:10px}
+ .footer.container,body:has(.sidebar-collapsed) .footer.container{width:calc(100% - 96px);margin-left:86px;margin-right:10px}
+ .sidebar-toggle{height:42px}
+}
+@media(max-height:650px){.sidebar-profile{margin-top:6px;padding-top:8px}.sidebar-link{height:42px}}
