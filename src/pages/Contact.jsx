@@ -36,7 +36,11 @@ export default function Contact() {
         throw new Error(result.error || `Message could not be sent (HTTP ${response.status}).`)
       }
       if (result.ok !== true) {
-        throw new Error(result.error || 'The contact service did not confirm delivery. Please try again.')
+        const contentType = response.headers.get('content-type') || 'unknown content type'
+        throw new Error(
+          result.error ||
+          `Contact endpoint returned HTTP ${response.status} with ${contentType}, but did not confirm email delivery. Check the Render service and its logs.`
+        )
       }
       setStatus({type:'success',text:'Message sent! I’ll get back to you soon.'})
       setForm({name:'',email:'',subject:'',message:'',website:''})
