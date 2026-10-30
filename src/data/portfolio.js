@@ -26,6 +26,19 @@ export const skillGroups = [
   { title: 'TOOLS & CREATIVE', items: ['Git', 'GitHub', 'Linux', 'VS Code', 'Unreal Engine'] }
 ]
 
+export const education = [
+  { id: 'btech', title: 'B.Tech — Computer Engineering', institution: 'Institution name to be added', period: 'Currently in 3rd year', detail: 'Exploring computer science through coursework, software projects and hands-on experiments.', image: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=85', imageAlt: 'University campus building' }
+]
+
+export const internships = [
+  { id: 'cubeage', title: 'Internship offer received', organization: 'Cubeage Technology Services Pvt. Ltd.', period: 'Dates and role to be added', detail: 'Add the confirmed designation, responsibilities, technologies and work highlights before publishing this entry.', image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85', imageAlt: 'Team collaborating in a modern workplace', status: 'Details to complete' }
+]
+
+// Add only verified participation, awards, credentials and completed learning here.
+export const hackathons = []
+export const certifications = []
+export const courses = []
+
 export const principles = [
   { number: '01', title: 'Build to understand', text: 'I learn by turning concepts into small working experiments.' },
   { number: '02', title: 'Stay curious', text: 'I explore software, automation, game development and the systems behind them.' },

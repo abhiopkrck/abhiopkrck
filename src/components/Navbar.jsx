@@ -3,7 +3,7 @@ import { NavLink, Link } from 'react-router-dom'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
 import { profile } from '../data/portfolio'
 
-const links = [['Home', '/'], ['About', '/about'], ['Projects', '/projects'], ['Contact', '/contact']]
+const links = [['Home', '/'], ['About', '/about'], ['Projects', '/projects'], ['Journey', '/journey'], ['Contact', '/contact']]
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   return <header className="nav-wrap"><nav className="glass nav container">
