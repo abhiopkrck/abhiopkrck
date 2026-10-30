@@ -65,7 +65,7 @@ async function sendContact(req, res) {
     const cleanSubject = typeof subject === 'string' ? subject.trim().slice(0, 140) : ''
     const cleanMessage = message.trim().slice(0, 5000)
 
-    if (cleanName.length < 2 || !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(cleanEmail) || cleanMessage.length < 10) {
+    if (cleanName.length < 2 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cleanEmail) || cleanMessage.length < 10) {
       return json(res, 400, { error: 'Enter a valid name, email and message (at least 10 characters).' })
     }
 
@@ -93,7 +93,7 @@ async function sendContact(req, res) {
       to: process.env.CONTACT_TO_EMAIL,
       replyTo: { name: cleanName, address: cleanEmail },
       subject: `Portfolio message: ${cleanSubject || 'New enquiry'}`,
-      text: `New message from your portfolio\\n\\nName: ${cleanName}\\nEmail: ${cleanEmail}\\nSubject: ${cleanSubject || '(not provided)'}\\n\\nMessage:\\n${cleanMessage}`
+      text: `New message from your portfolio\n\nName: ${cleanName}\nEmail: ${cleanEmail}\nSubject: ${cleanSubject || '(not provided)'}\n\nMessage:\n${cleanMessage}`
     })
 
     return json(res, 200, { ok: true, message: 'Your message has been sent.' })
@@ -116,7 +116,7 @@ async function serveStatic(req, res, pathname) {
     return json(res, 400, { error: 'Invalid URL path.' })
   }
 
-  const relative = requestedPath === '/' ? 'index.html' : requestedPath.replace(/^\\/+/, '')
+  const relative = requestedPath === '/' ? 'index.html' : requestedPath.replace(/^\/+/, '')
   let filePath = path.resolve(dist, relative)
   if (!filePath.startsWith(dist + path.sep) && filePath !== path.join(dist, 'index.html')) {
     return json(res, 403, { error: 'Forbidden' })
