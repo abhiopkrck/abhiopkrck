@@ -132,3 +132,49 @@ body:has(.sidebar-collapsed) .footer.container{width:min(1200px,calc(100% - 145p
 :root[data-theme="simple"] body,:root[data-theme="solarized"] body,:root[data-theme="claymorphism"] body,:root[data-theme="neumorphism"] body{background:var(--theme-bg)}
 :root[data-theme="simple"] .hero h1,:root[data-theme="solarized"] .hero h1,:root[data-theme="claymorphism"] .hero h1,:root[data-theme="neumorphism"] .hero h1{color:var(--theme-text)}
 :root[data-theme="simple"] .sidebar-link.active,:root[data-theme="solarized"] .sidebar-link.active{background:color-mix(in srgb,var(--cyan) 12%,transparent)}
+
+
+/* Navigation refinement: larger readable tabs, crisp icons, and a side-mounted hide handle. */
+.sidebar-wrap{width:260px}
+.sidebar{padding:20px 14px 15px}
+.sidebar-links{gap:7px;padding:2px 3px 8px 0}
+.sidebar-link{height:49px;min-height:49px;padding:0 14px;gap:15px;font-size:12px;letter-spacing:.05px}
+.sidebar-link>svg{width:21px;height:21px;min-width:21px;flex:0 0 21px;stroke-width:1.9}
+.sidebar-link-label{line-height:1.2}
+.sidebar-caption{font-size:9px;padding-bottom:12px}
+.sidebar-brand{min-height:56px}
+.sidebar-brand .brand-mark{font-size:33px}
+.sidebar-brand-copy{font-size:11px}
+.sidebar-github{height:48px;min-height:48px;font-size:12px;gap:15px;padding-inline:14px}
+.sidebar-github>svg:first-child{width:21px;height:21px;flex:0 0 21px}
+.sidebar-profile{padding-top:14px}
+.sidebar-avatar{width:37px;height:37px;flex-basis:37px}
+.sidebar-profile-copy b{font-size:11px}
+.sidebar-profile-copy small{font-size:9px}
+.sidebar-edge-toggle{position:absolute;right:-17px;top:50%;transform:translateY(-50%);z-index:5;width:34px;height:58px;display:grid;place-items:center;border:1px solid var(--line);border-left:0;border-radius:0 14px 14px 0;background:rgba(16,24,45,.96);color:var(--cyan);box-shadow:8px 5px 22px #0005;cursor:pointer;backdrop-filter:blur(14px);transition:background .2s,width .2s}
+.sidebar-edge-toggle:hover{background:rgba(120,231,244,.16);width:39px}
+.sidebar-edge-toggle svg{flex:0 0 auto}
+.sidebar-wrap.sidebar-collapsed{width:82px}
+.sidebar-collapsed .sidebar-link{height:49px;min-height:49px}
+.sidebar-collapsed .sidebar-edge-toggle{right:-17px}
+.sidebar-collapsed .sidebar-brand .brand-mark{font-size:32px}
+.site-shell{width:min(1120px,calc(100% - 326px));margin-left:calc(260px + max(28px, (100vw - 260px - 1120px)/2));margin-right:28px}
+.footer.container{width:min(1120px,calc(100% - 326px));margin-left:calc(260px + max(28px, (100vw - 260px - 1120px)/2));margin-right:28px}
+body:has(.sidebar-collapsed) .site-shell{width:min(1200px,calc(100% - 149px));margin-left:calc(82px + max(28px, (100vw - 82px - 1200px)/2));margin-right:28px}
+body:has(.sidebar-collapsed) .footer.container{width:min(1200px,calc(100% - 149px));margin-left:calc(82px + max(28px, (100vw - 82px - 1200px)/2));margin-right:28px}
+@media(max-width:760px){
+ .sidebar-wrap{width:70px}
+ .sidebar{padding:13px 7px 10px}
+ .sidebar-link,.sidebar-github{height:48px;min-height:48px}
+ .sidebar-link>svg,.sidebar-github>svg:first-child{width:22px;height:22px;min-width:22px;flex-basis:22px}
+ .sidebar-edge-toggle{right:-15px;width:30px;height:50px;border-radius:0 12px 12px 0}
+ .sidebar-edge-toggle:hover{width:33px}
+ .sidebar-wrap.sidebar-collapsed{width:70px}
+ .site-shell,body:has(.sidebar-collapsed) .site-shell{width:calc(100% - 100px);margin-left:90px;margin-right:10px}
+ .footer.container,body:has(.sidebar-collapsed) .footer.container{width:calc(100% - 100px);margin-left:90px;margin-right:10px}
+}
+@media(max-height:760px){
+ .sidebar-links{gap:4px}
+ .sidebar-link{height:44px;min-height:44px}
+ .sidebar-profile{margin-top:7px;padding-top:8px}
+}

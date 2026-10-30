@@ -35,11 +35,10 @@ export default function Navbar() {
       <a className="sidebar-github" href={profile.github} target="_blank" rel="noreferrer" title={collapsed ? 'GitHub' : undefined}>
         <Github size={18}/><span className="sidebar-link-label">GitHub</span><ArrowUpRight className="sidebar-external" size={13}/>
       </a>
-      <button className="sidebar-toggle" type="button" onClick={() => setCollapsed(value => !value)} aria-label={collapsed ? 'Expand navigation' : 'Collapse navigation'} title={collapsed ? 'Expand navigation' : 'Collapse navigation'}>
-        {collapsed ? <PanelLeftOpen size={18}/> : <PanelLeftClose size={18}/>}
-        <span className="sidebar-link-label">{collapsed ? 'Expand menu' : 'Collapse menu'}</span>
-      </button>
       <div className="sidebar-profile"><span className="sidebar-avatar">AB</span><span className="sidebar-profile-copy"><b>Abhishek Boyane</b><small>Developer · Creator</small></span></div>
     </div>
+    <button className={`sidebar-edge-toggle ${collapsed ? 'is-collapsed' : ''}`} type="button" onClick={() => setCollapsed(value => !value)} aria-label={collapsed ? 'Show navigation labels' : 'Hide navigation labels'} title={collapsed ? 'Expand sidebar' : 'Hide sidebar'}>
+      {collapsed ? <PanelLeftOpen size={19}/> : <PanelLeftClose size={19}/>}
+    </button>
   </aside>
 }
