@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
-import { Home, UserRound, FolderKanban, GraduationCap, BriefcaseBusiness, Trophy, Award, BookOpen, Mail, Github, PanelLeftClose, PanelLeftOpen, ArrowUpRight } from 'lucide-react'
+import { Home, UserRound, FolderKanban, GraduationCap, BriefcaseBusiness, Trophy, Award, BookOpen, Mail, Settings2, Github, PanelLeftClose, PanelLeftOpen, ArrowUpRight } from 'lucide-react'
 import { profile } from '../data/portfolio'
 
 const links = [
@@ -12,7 +12,8 @@ const links = [
   { label: 'Hackathons', path: '/hackathons', icon: Trophy },
   { label: 'Certifications', path: '/certifications', icon: Award },
   { label: 'Courses', path: '/courses', icon: BookOpen },
-  { label: 'Contact', path: '/contact', icon: Mail }
+  { label: 'Contact', path: '/contact', icon: Mail },
+  { label: 'Settings', path: '/settings', icon: Settings2 }
 ]
 
 export default function Navbar() {
