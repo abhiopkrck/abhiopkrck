@@ -1,0 +1,5 @@
+import { ArrowUpRight, Github, Linkedin, Instagram, Youtube } from 'lucide-react'
+import { profile } from '../data/portfolio'
+export default function Footer() {
+  return <footer className="container footer"><div className="footer-top"><div><div className="brand footer-brand"><span className="brand-mark">A<span>.</span></span> ABHISHEK BOYANE</div><p>Curiosity into code. Ideas into things.</p></div><div className="socials"><a href={profile.github} aria-label="GitHub" target="_blank" rel="noreferrer"><Github/></a><a href={profile.linkedin} aria-label="LinkedIn" target="_blank" rel="noreferrer"><Linkedin/></a><a href={profile.instagram} aria-label="Instagram" target="_blank" rel="noreferrer"><Instagram/></a><a href={profile.youtube} aria-label="YouTube" target="_blank" rel="noreferrer"><Youtube/></a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Abhishek Boyane</span><span>DESIGNED TO KEEP EVOLVING <ArrowUpRight size={13}/></span></div></footer>
+}
