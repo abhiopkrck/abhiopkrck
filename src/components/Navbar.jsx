@@ -20,10 +20,15 @@ export default function Navbar() {
   const [collapsed, setCollapsed] = useState(false)
   return <aside className={`sidebar-wrap ${collapsed ? 'sidebar-collapsed' : ''}`}>
     <div className="glass sidebar">
-      <Link to="/" className="sidebar-brand" aria-label="Abhishek portfolio home">
-        <span className="brand-mark">A<span>.</span></span>
-        <span className="sidebar-brand-copy">ABHISHEK<span>PORTFOLIO</span></span>
-      </Link>
+      <div className="sidebar-brand-row">
+        <Link to="/" className="sidebar-brand" aria-label="Abhishek portfolio home">
+          <span className="brand-mark">A<span>.</span></span>
+          <span className="sidebar-brand-copy">ABHISHEK<span>PORTFOLIO</span></span>
+        </Link>
+        <button className="sidebar-brand-toggle" type="button" onClick={() => setCollapsed(value => !value)} aria-label={collapsed ? 'Expand navigation' : 'Collapse navigation'} title={collapsed ? 'Expand navigation' : 'Collapse navigation'}>
+          {collapsed ? <PanelLeftOpen size={18}/> : <PanelLeftClose size={18}/>}
+        </button>
+      </div>
       <div className="sidebar-divider"/>
       <span className="sidebar-caption">WORKSPACE</span>
       <nav className="sidebar-links" aria-label="Main navigation">
@@ -37,8 +42,5 @@ export default function Navbar() {
       </a>
       <div className="sidebar-profile"><span className="sidebar-avatar">AB</span><span className="sidebar-profile-copy"><b>Abhishek Boyane</b><small>Developer · Creator</small></span></div>
     </div>
-    <button className={`sidebar-edge-toggle ${collapsed ? 'is-collapsed' : ''}`} type="button" onClick={() => setCollapsed(value => !value)} aria-label={collapsed ? 'Show navigation labels' : 'Hide navigation labels'} title={collapsed ? 'Expand sidebar' : 'Hide sidebar'}>
-      {collapsed ? <PanelLeftOpen size={19}/> : <PanelLeftClose size={19}/>}
-    </button>
   </aside>
 }

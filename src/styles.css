@@ -178,3 +178,33 @@ body:has(.sidebar-collapsed) .footer.container{width:min(1200px,calc(100% - 149p
  .sidebar-link{height:44px;min-height:44px}
  .sidebar-profile{margin-top:7px;padding-top:8px}
 }
+
+
+/* Sidebar behavior correction: no internal nav scrolling; collapse control beside the A mark. */
+.sidebar-brand-row{display:flex;align-items:center;gap:5px;min-height:56px;padding-right:3px}
+.sidebar-brand-row .sidebar-brand{flex:1;min-width:0;padding:3px 8px 17px;gap:10px}
+.sidebar-brand-toggle{width:34px;height:34px;flex:0 0 34px;display:grid;place-items:center;border:1px solid var(--line);border-radius:10px;background:rgba(120,231,244,.08);color:var(--cyan);cursor:pointer;transition:background .2s,border-color .2s}
+.sidebar-brand-toggle:hover{background:rgba(120,231,244,.17);border-color:rgba(120,231,244,.4)}
+.sidebar-brand-toggle svg{display:block}
+.sidebar-links{overflow:hidden!important;overscroll-behavior:none;scrollbar-width:none;padding-right:0;gap:4px}
+.sidebar-links::-webkit-scrollbar{display:none}
+.sidebar-link{flex:1 1 0;min-height:36px;height:auto}
+.sidebar-spacer{flex:0 1 10px;min-height:3px}
+.sidebar-wrap.sidebar-collapsed .sidebar-brand-row{gap:0;padding:0;justify-content:center}
+.sidebar-wrap.sidebar-collapsed .sidebar-brand-row .sidebar-brand{flex:0 0 auto;width:36px;padding:3px 0 10px;justify-content:center}
+.sidebar-wrap.sidebar-collapsed .sidebar-brand-toggle{width:29px;height:29px;flex-basis:29px}
+@media(max-width:760px){
+ .sidebar-brand-row{min-height:48px;justify-content:center;gap:0;padding:0}
+ .sidebar-brand-row .sidebar-brand{flex:0 0 auto;width:31px;padding:3px 0 10px;justify-content:center}
+ .sidebar-brand-toggle{width:27px;height:27px;flex-basis:27px}
+ .sidebar-links{overflow:hidden!important;gap:3px}
+ .sidebar-link{flex:1 1 0;min-height:34px;height:auto}
+ .sidebar-spacer{min-height:2px;flex-basis:5px}
+}
+@media(max-height:760px){
+ .sidebar-links{gap:2px}
+ .sidebar-link{min-height:31px}
+ .sidebar-brand-row{min-height:48px}
+ .sidebar-github{height:40px;min-height:40px}
+ .sidebar-profile{padding-top:7px}
+}
