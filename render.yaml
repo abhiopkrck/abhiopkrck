@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: abhishek-portfolio
+    runtime: node
+    plan: free
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
