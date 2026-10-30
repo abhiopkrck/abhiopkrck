@@ -208,3 +208,24 @@ body:has(.sidebar-collapsed) .footer.container{width:min(1200px,calc(100% - 149p
  .sidebar-github{height:40px;min-height:40px}
  .sidebar-profile{padding-top:7px}
 }
+
+
+/* Contact page: locally saved message board */
+.saved-messages{margin-top:30px;padding-top:24px;border-top:1px solid var(--line)}
+.saved-messages-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:15px}
+.saved-messages-heading .eyebrow{display:flex;align-items:center;gap:7px}
+.saved-messages-heading h3{font-size:18px;margin:9px 0 0;letter-spacing:-.4px}
+.saved-messages-heading h3 span{display:inline-grid;place-items:center;min-width:23px;height:23px;padding:0 6px;margin-left:5px;border-radius:20px;background:rgba(120,231,244,.12);color:var(--cyan);font:10px 'DM Mono'}
+.saved-messages-heading>small{font:8px 'DM Mono';color:var(--muted);text-align:right}
+.saved-messages-empty{padding:17px;border:1px dashed var(--line);border-radius:12px;color:var(--muted);font-size:10px;line-height:1.7}
+.saved-message-list{display:grid;gap:11px}
+.saved-message{padding:15px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.025);overflow-wrap:anywhere}
+.saved-message-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.saved-message-top>div{display:grid;gap:5px;min-width:0}
+.saved-message-top strong{font-size:11px;color:var(--theme-text,var(--theme-text,#edf1ff))}
+.saved-message-top span,.saved-message time{font:8px 'DM Mono';color:var(--muted)}
+.saved-message-delete{width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center;border:1px solid var(--line);border-radius:9px;background:transparent;color:var(--muted);cursor:pointer}
+.saved-message-delete:hover{color:#ff9292;border-color:#ff929255;background:#ff777711}
+.saved-message h4{font-size:11px;margin:13px 0 5px;color:var(--cyan)}
+.saved-message>p{font-size:10px;line-height:1.8;color:var(--muted);white-space:pre-wrap;margin:8px 0 12px}
+.saved-message time{display:block}
