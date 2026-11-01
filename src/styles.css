@@ -280,3 +280,36 @@ body:has(.sidebar-collapsed) .footer.container{width:min(1200px,calc(100% - 149p
 @media(max-width:620px){.mirror-frame{height:330px;width:270px}.portrait-visual{height:365px}.detail-meta-grid{grid-template-columns:1fr}.detail-gallery{grid-template-columns:1fr}.detail-gallery img{height:200px}.detail-hero h1{font-size:36px}.detail-cover{height:210px}.detail-section{margin-bottom:38px}}
 
 .media-disclaimer{font-size:10px!important;color:var(--muted);line-height:1.7;padding:10px 12px;border-left:2px solid var(--cyan);background:rgba(120,231,244,.045);border-radius:0 9px 9px 0;margin:12px 0 17px!important}
+
+
+/* Project case-study documentation */
+.detail-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin:24px 0 18px}
+.detail-stat{padding:15px;display:grid;grid-template-columns:25px 1fr;column-gap:9px;align-items:center;min-width:0}
+.detail-stat>span{grid-row:span 2;color:var(--cyan)}
+.detail-stat small{font:8px 'DM Mono';letter-spacing:.8px;color:var(--muted)}
+.detail-stat b{font:11px 'DM Mono';letter-spacing:.5px;color:#eaf1ff;margin-top:6px;overflow-wrap:anywhere}
+.media-count-line{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 0 15px;color:var(--muted);font:9px 'DM Mono';letter-spacing:.3px}
+.gallery-pagination{display:flex;align-items:center;justify-content:center;gap:15px;margin:17px 0}
+.gallery-pagination button{border:1px solid var(--line);border-radius:8px;padding:8px 12px;background:rgba(255,255,255,.045);color:#eaf1ff;font:9px 'DM Mono';cursor:pointer}
+.gallery-pagination button:disabled{opacity:.35;cursor:not-allowed}
+.gallery-pagination span{font:9px 'DM Mono';color:var(--muted)}
+.reference-gallery,.readme-panel{border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025);overflow:hidden;margin-top:17px}
+.reference-gallery>summary,.readme-panel>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 17px;cursor:pointer;color:#dce5fa;font:10px 'DM Mono';list-style:none}
+.reference-gallery>summary::-webkit-details-marker,.readme-panel>summary::-webkit-details-marker{display:none}
+.reference-gallery[open]>summary,.readme-panel[open]>summary{border-bottom:1px solid var(--line)}
+.reference-gallery .detail-gallery{padding:14px}
+.project-videos{display:grid;gap:14px;margin-top:17px}
+.project-video-card{overflow:hidden;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(220px,.8fr);gap:0}
+.project-video-card .detail-video{border:0;border-radius:0;min-height:220px}
+.project-video-copy{padding:20px;align-self:center}
+.project-video-copy h3{font-size:16px;margin:9px 0}
+.project-video-copy p{font-size:11px;line-height:1.8;color:var(--muted)}
+.project-video-copy>small{font:9px 'DM Mono';color:var(--cyan)}
+.readme-panel>summary>span{display:inline-flex;align-items:center;gap:8px}
+.readme-panel>summary>span:first-child{color:var(--cyan)}
+.readme-content{max-height:720px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;margin:0;padding:20px;color:#c3cce2;background:rgba(3,7,17,.58);font:10px/1.8 'DM Mono',monospace}
+.readme-content::-webkit-scrollbar{width:7px;height:7px}
+.readme-content::-webkit-scrollbar-thumb{background:rgba(160,178,225,.25);border-radius:8px}
+.readme-section .text-link{margin-top:15px}
+@media(max-width:800px){.detail-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.project-video-card{grid-template-columns:1fr}.project-video-card .detail-video{min-height:190px}}
+@media(max-width:520px){.detail-stats{gap:8px}.detail-stat{padding:12px}.media-count-line{align-items:flex-start;flex-direction:column;gap:6px}.readme-panel>summary{align-items:flex-start;flex-direction:column}.readme-content{font-size:9px;padding:14px}}
