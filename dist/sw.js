@@ -1,4 +1,4 @@
-const CACHE_NAME = 'abhishek-portfolio-v2'
+const CACHE_NAME = 'abhishek-portfolio-v4'
 const APP_SHELL = ['/', '/manifest.webmanifest', '/icons/app-icon.svg']
 
 self.addEventListener('install', event => {

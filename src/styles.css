@@ -313,3 +313,64 @@ body:has(.sidebar-collapsed) .footer.container{width:min(1200px,calc(100% - 149p
 .readme-section .text-link{margin-top:15px}
 @media(max-width:800px){.detail-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.project-video-card{grid-template-columns:1fr}.project-video-card .detail-video{min-height:190px}}
 @media(max-width:520px){.detail-stats{gap:8px}.detail-stat{padding:12px}.media-count-line{align-items:flex-start;flex-direction:column;gap:6px}.readme-panel>summary{align-items:flex-start;flex-direction:column}.readme-content{font-size:9px;padding:14px}}
+
+
+/* Keep project marks separate from previews and show screenshots without cropping. */
+.journey-photo-banner>img{object-fit:contain}
+.project-card-top{position:relative;z-index:1;margin-bottom:14px}
+.project-icon{flex:0 0 42px;width:42px;height:42px;font-size:22px}
+.project-cover{height:190px;display:flex;align-items:center;justify-content:center;margin:0 -22px 18px;background:rgba(4,8,18,.72);border-block:1px solid var(--line)}
+.project-cover:after{display:none}
+.project-cover img{width:100%;height:100%;object-fit:contain;padding:6px;transition:transform .3s}
+.project-card:hover .project-cover img{transform:scale(1.015)}
+.project-cover-icon{display:none}
+.detail-cover{display:flex;flex-direction:column;background:rgba(4,8,18,.68)}
+.detail-cover img{width:100%;height:calc(100% - 42px);object-fit:contain;padding:8px}
+.detail-cover:after{display:none}
+.detail-cover>span{position:static;flex:0 0 42px;justify-content:center;border:0;border-top:1px solid var(--line);border-radius:0;background:rgba(4,8,18,.55)}
+.journey-image-wrap{display:flex;flex-direction:column;background:rgba(4,8,18,.68)}
+.journey-image-wrap:after{display:none}
+.journey-image-wrap img{flex:1;min-height:0;height:auto;object-fit:contain;padding:5px}
+.journey-card:hover .journey-image-wrap img{transform:none}
+.journey-image-wrap .journey-image-label{position:static;flex:0 0 28px;padding:5px 12px;background:rgba(4,8,18,.72)}
+.education-collage{background:rgba(4,8,18,.68)}
+.education-photo{object-fit:contain;padding:5px;background:rgba(4,8,18,.5)}
+.education-collage:after{display:none}
+.education-collage .journey-image-label{display:none}
+.detail-gallery{display:grid;grid-auto-flow:column;grid-auto-columns:min(82vw,440px);grid-template-columns:none;gap:14px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;padding:4px 2px 14px}
+.detail-gallery figure{width:100%;min-width:0;scroll-snap-align:start;background:rgba(4,8,18,.65)}
+.detail-gallery img,.internship-project img{width:100%;height:250px;object-fit:contain;padding:8px;background:rgba(4,8,18,.72)}
+.certificate-preview img{height:260px;object-fit:contain;padding:8px}
+.hero-portrait{object-fit:contain;object-position:center;border-radius:180px 180px 26px 26px;background:rgba(4,8,18,.42)}
+.mirror-reflection img{object-fit:contain;object-position:center}
+@media(max-width:620px){
+ .project-cover{height:165px}
+ .detail-gallery{grid-auto-columns:min(88vw,360px)}
+ .detail-gallery img,.internship-project img{height:220px}
+ .education-collage{min-height:220px}
+ .journey-image-wrap{height:170px}
+ .detail-cover{height:230px}
+}
+
+
+/* Photo galleries stack vertically at a consistent banner height. */
+.detail-gallery{grid-auto-flow:row;grid-auto-columns:auto;grid-template-columns:minmax(0,1fr);overflow:visible;overscroll-behavior:initial;scroll-snap-type:none;gap:18px;padding:4px 0}
+.detail-gallery figure{width:100%;max-width:900px;scroll-snap-align:none}
+.detail-gallery img,.internship-project img{height:300px;object-fit:contain;padding:8px}
+@media(max-width:620px){.detail-gallery img,.internship-project img{height:220px}}
+.zoomable-photo{cursor:zoom-in}
+.zoomable-photo:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.photo-lightbox{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:56px 24px 24px;background:rgba(2,5,14,.94);backdrop-filter:blur(12px);cursor:zoom-out}
+.photo-lightbox img{display:block;width:auto;height:auto;max-width:min(94vw,1500px);max-height:88vh;object-fit:contain;box-shadow:0 24px 90px #0009;border:1px solid rgba(255,255,255,.13);border-radius:10px;cursor:default}
+.photo-lightbox-close{position:absolute;top:18px;right:22px;width:44px;height:44px;border:1px solid rgba(255,255,255,.24);border-radius:50%;background:#11182b;color:white;font-size:28px;line-height:1;cursor:pointer}
+
+
+/* Let every photo keep its real aspect ratio without adding black or white fill. */
+.project-cover,.detail-cover,.journey-image-wrap,.education-collage,.detail-gallery figure,
+.detail-gallery img,.internship-project img,.education-photo,.certificate-preview img,
+.hero-portrait,.mirror-reflection img{background:transparent!important}
+.project-cover{border-color:transparent}
+.project-cover img,.detail-cover img,.journey-image-wrap img,.detail-gallery img,
+.internship-project img,.education-photo,.certificate-preview img{padding:0}
+.photo-lightbox{background:rgba(2,5,14,.18);backdrop-filter:none}
+.photo-lightbox img{border:0;border-radius:0;box-shadow:none}
